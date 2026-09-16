@@ -1,0 +1,112 @@
+{
+  "info": {
+    "name": "EU4 Playstyle Recommender",
+    "description": "GET /info, a valid POST /recommend (200), and an invalid POST /recommend (422) against the deployed Modal API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://donkey-haute-01000001--assignment4-pipeline-fastapi-app.modal.run"
+    }
+  ],
+  "item": [
+    {
+      "name": "GET /info",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{base_url}}/info", "host": ["{{base_url}}"], "path": ["info"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Response has pipeline metadata', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.have.property('n_nations', 49);",
+              "    pm.expect(body).to.have.property('sklearn_version');",
+              "    pm.expect(body).to.have.property('tag_vocab');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST /recommend (valid)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"playstyle_tags\": [\"tall\", \"military\"],\n  \"macro_region\": \"Central Europe\",\n  \"ambition\": \"intermediate\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/recommend", "host": ["{{base_url}}"], "path": ["recommend"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Returns 5 ranked nations', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.be.an('array').with.lengthOf(5);",
+              "    pm.expect(body[0]).to.have.all.keys('tag', 'name', 'region', 'key_idea', 'ambition', 'playstyle_tags', 'distance');",
+              "});",
+              "",
+              "pm.test('Results are sorted by ascending distance', function () {",
+              "    const body = pm.response.json();",
+              "    for (let i = 1; i < body.length; i++) {",
+              "        pm.expect(body[i].distance).to.be.at.least(body[i - 1].distance);",
+              "    }",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "POST /recommend (invalid - missing ambition)",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"playstyle_tags\": [\"tall\", \"military\"],\n  \"macro_region\": \"Central Europe\"\n}"
+        },
+        "url": { "raw": "{{base_url}}/recommend", "host": ["{{base_url}}"], "path": ["recommend"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 422', function () {",
+              "    pm.response.to.have.status(422);",
+              "});",
+              "",
+              "pm.test('Error names the missing field', function () {",
+              "    const body = pm.response.json();",
+              "    const fields = body.detail.map((d) => d.loc[d.loc.length - 1]);",
+              "    pm.expect(fields).to.include('ambition');",
+              "});"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
