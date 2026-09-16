@@ -1,0 +1,835 @@
+{
+  "TUR": {
+    "name": "Ottomans",
+    "region": "Anatolia",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Mehmed II Osmanoğlu",
+    "ruler_adm": 6,
+    "ruler_dip": 4,
+    "ruler_mil": 6,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 8.0,
+      "dip_score": 5.0,
+      "key_idea": "Timar System (-15% Core-Creation Cost)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "FRA": {
+    "name": "France",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Charles VII de Valois",
+    "ruler_adm": 4,
+    "ruler_dip": 2,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 10.0,
+      "eco_score": 6.0,
+      "dip_score": 7.0,
+      "key_idea": "Elan! (+15% Morale of Armies)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "military", "quality"]
+  },
+  "BRA": {
+    "name": "Brandenburg",
+    "region": "Germany",
+    "macro_region": "Central Europe",
+    "starting_ruler": "Friedrich II Hohenzollern",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 10.0,
+      "eco_score": 4.0,
+      "dip_score": 5.0,
+      "key_idea": "Brandenburg Army (+10% Infantry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "military", "infantry", "quality"]
+  },
+  "ENG": {
+    "name": "England",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Henry VI Lancaster",
+    "ruler_adm": 0,
+    "ruler_dip": 0,
+    "ruler_mil": 0,
+    "national_ideas": {
+      "mil_score": 6.0,
+      "eco_score": 9.0,
+      "dip_score": 8.0,
+      "key_idea": "Royal Navy (+15% Heavy Ship Combat Ability)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["tall", "wide", "naval", "trade", "colonial", "quality"]
+  },
+  "AUT": {
+    "name": "Austria",
+    "region": "Germany",
+    "macro_region": "Central Europe",
+    "starting_ruler": "Friedrich III Habsburg",
+    "ruler_adm": 2,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.0,
+      "eco_score": 5.0,
+      "dip_score": 10.0,
+      "key_idea": "Imperial Diplomacy (+2 Diplomatic Relations)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "diplomatic"]
+  },
+  "CAS": {
+    "name": "Castile",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Juan II de Trastámara",
+    "ruler_adm": 1,
+    "ruler_dip": 1,
+    "ruler_mil": 1,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 8.0,
+      "dip_score": 8.0,
+      "key_idea": "The Inter Caetera (+1 Colonists)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "colonial", "military"]
+  },
+  "POR": {
+    "name": "Portugal",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Afonso V de Avis",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 4.0,
+      "eco_score": 10.0,
+      "dip_score": 7.0,
+      "key_idea": "Afonsine Ordinances (+30% Global Trade Range)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "colonial", "trade", "naval"]
+  },
+  "SWE": {
+    "name": "Sweden",
+    "region": "Scandinavia",
+    "macro_region": "Northern Europe",
+    "starting_ruler": "Karl VIII Bonde",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 9.5,
+      "eco_score": 5.0,
+      "dip_score": 4.0,
+      "key_idea": "Swedish Steel (+20% Infantry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "infantry", "quality"]
+  },
+  "POL": {
+    "name": "Poland",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Władysław III Jagiellon",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 5.0,
+      "dip_score": 7.0,
+      "key_idea": "Winged Hussars (+33% Cavalry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "cavalry", "quality"]
+  },
+  "MOS": {
+    "name": "Muscovy",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Vasily II Rurikovich",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 6.0,
+      "dip_score": 5.0,
+      "key_idea": "The Gathering of Russia (-20% Core-Creation Cost)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "MAM": {
+    "name": "Mamluks",
+    "region": "Egypt",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Jaqmaq Burji",
+    "ruler_adm": 2,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.5,
+      "eco_score": 8.0,
+      "dip_score": 6.0,
+      "key_idea": "Grand Bazaar (+10% Trade Efficiency)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "trade", "military", "cavalry"]
+  },
+  "TIM": {
+    "name": "Timurids",
+    "region": "Persia",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Shah Rukh Timurid",
+    "ruler_adm": 4,
+    "ruler_dip": 5,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 5.0,
+      "dip_score": 6.0,
+      "key_idea": "Mantis Tactics (-25% Core-Creation Cost)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "quantity", "diplomatic"]
+  },
+  "MNG": {
+    "name": "Ming",
+    "region": "China",
+    "macro_region": "East Asia",
+    "starting_ruler": "Zhengtong Zhu",
+    "ruler_adm": 1,
+    "ruler_dip": 1,
+    "ruler_mil": 1,
+    "national_ideas": {
+      "mil_score": 5.0,
+      "eco_score": 9.5,
+      "dip_score": 7.5,
+      "key_idea": "The Inward Perfection (+10% Goods Produced)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["tall", "trade"]
+  },
+  "ASH": {
+    "name": "Ashikaga",
+    "region": "Japan",
+    "macro_region": "East Asia",
+    "starting_ruler": "Masaie Ashikaga",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 4.0,
+      "dip_score": 8.0,
+      "key_idea": "Sankin-kotai (-10% Liberty Desire in Subjects)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "diplomatic", "military"]
+  },
+  "VIJ": {
+    "name": "Vijayanagar",
+    "region": "India",
+    "macro_region": "South Asia",
+    "starting_ruler": "Devaraya II Sangama",
+    "ruler_adm": 5,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 7.5,
+      "eco_score": 8.5,
+      "dip_score": 5.5,
+      "key_idea": "Indian Ocean Trade (+10% Trade Power Modifier)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "trade", "naval"]
+  },
+  "BAH": {
+    "name": "Bahmanis",
+    "region": "India",
+    "macro_region": "South Asia",
+    "starting_ruler": "Ala-ud-Din Ahmad II Bahmani",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 6.5,
+      "dip_score": 6.0,
+      "key_idea": "Dakani Language (+10% National Tax Modifier)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "trade", "military"]
+  },
+  "VEN": {
+    "name": "Venice",
+    "region": "Italy",
+    "macro_region": "Southern Europe",
+    "starting_ruler": "Francesco Foscari",
+    "ruler_adm": 4,
+    "ruler_dip": 5,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 5.5,
+      "eco_score": 10.0,
+      "dip_score": 8.5,
+      "key_idea": "The Arsenal (+20% Galley Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "naval", "trade", "quality"]
+  },
+  "ETH": {
+    "name": "Ethiopia",
+    "region": "East Africa",
+    "macro_region": "Sub-Saharan Africa",
+    "starting_ruler": "Zara Yaqob Solomonid",
+    "ruler_adm": 6,
+    "ruler_dip": 5,
+    "ruler_mil": 6,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 6.0,
+      "dip_score": 6.5,
+      "key_idea": "Solomonic Descent (+0.50 Yearly Legitimacy)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "diplomatic", "military"]
+  },
+  "KIL": {
+    "name": "Kilwa",
+    "region": "East Africa",
+    "macro_region": "Sub-Saharan Africa",
+    "starting_ruler": "Sa'id Shirazi",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 4.5,
+      "eco_score": 9.5,
+      "dip_score": 6.0,
+      "key_idea": "Swahili Gold Network (+10% Trade Efficiency)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "trade"]
+  },
+  "BUR": {
+    "name": "Burgundy",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Philippe III de Bourgogne",
+    "ruler_adm": 5,
+    "ruler_dip": 4,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 7.5,
+      "dip_score": 8.0,
+      "key_idea": "Order of the Golden Fleece (+10% Morale of Armies)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "quality", "diplomatic"]
+  },
+  "HUN": {
+    "name": "Hungary",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "László V Hunyadi",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 5.5,
+      "dip_score": 6.5,
+      "key_idea": "Bulwark of Christianity (+20% Manpower Recovery Speed)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "KAZ": {
+    "name": "Kazan",
+    "region": "Central Asia",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Mahmud Ulugh",
+    "ruler_adm": 2,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 4.0,
+      "dip_score": 5.0,
+      "key_idea": "Steppe Nomads (+25% Cavalry Combat Ability)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "cavalry", "quality"]
+  },
+  "MAL": {
+    "name": "Malacca",
+    "region": "East Indies",
+    "macro_region": "Southeast Asia",
+    "starting_ruler": "Muzaffar Shah",
+    "ruler_adm": 3,
+    "ruler_dip": 4,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 5.0,
+      "eco_score": 9.5,
+      "dip_score": 7.0,
+      "key_idea": "Spice Monopoly (+15% Trade Efficiency)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "wide", "trade", "naval"]
+  },
+  "AZT": {
+    "name": "Aztec",
+    "region": "North America",
+    "macro_region": "Americas",
+    "starting_ruler": "Moctezuma I Ilhuicamina",
+    "ruler_adm": 4,
+    "ruler_dip": 4,
+    "ruler_mil": 5,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 4.5,
+      "dip_score": 4.0,
+      "key_idea": "Flower Wars (-20% War Exhaustion Cost)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "INC": {
+    "name": "Cusco",
+    "region": "South America",
+    "macro_region": "Americas",
+    "starting_ruler": "Pachacuti Inca Yupanqui",
+    "ruler_adm": 6,
+    "ruler_dip": 5,
+    "ruler_mil": 6,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 7.0,
+      "dip_score": 5.0,
+      "key_idea": "Mitma Policies (-15% Core-Creation Cost)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "DAI": {
+    "name": "Dai Viet",
+    "region": "Indochina",
+    "macro_region": "Southeast Asia",
+    "starting_ruler": "Le Nhan Tong",
+    "ruler_adm": 4,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 7.5,
+      "eco_score": 5.5,
+      "dip_score": 6.5,
+      "key_idea": "Red River Dikes (+15% Infantry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "infantry", "quality"]
+  },
+  "AYU": {
+    "name": "Ayutthaya",
+    "region": "Indochina",
+    "macro_region": "Southeast Asia",
+    "starting_ruler": "Trailokanat Borommatrailokanat",
+    "ruler_adm": 4,
+    "ruler_dip": 4,
+    "ruler_mil": 5,
+    "national_ideas": {
+      "mil_score": 7.0,
+      "eco_score": 7.5,
+      "dip_score": 6.0,
+      "key_idea": "Sakdina System (+10% National Tax Modifier)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "trade", "military"]
+  },
+  "KOR": {
+    "name": "Korea",
+    "region": "East Asia",
+    "macro_region": "East Asia",
+    "starting_ruler": "Sejong Great",
+    "ruler_adm": 6,
+    "ruler_dip": 5,
+    "ruler_mil": 5,
+    "national_ideas": {
+      "mil_score": 5.5,
+      "eco_score": 8.0,
+      "dip_score": 8.5,
+      "key_idea": "Hangul Alphabet (-10% Technology Cost)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "trade"]
+  },
+  "OIR": {
+    "name": "Oirat",
+    "region": "Central Asia",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Esen Taishi",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 5,
+    "national_ideas": {
+      "mil_score": 9.5,
+      "eco_score": 4.0,
+      "dip_score": 4.5,
+      "key_idea": "Steppe Leaders (+20% Cavalry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "cavalry", "quality"]
+  },
+  "BEN": {
+    "name": "Bengal",
+    "region": "India",
+    "macro_region": "South Asia",
+    "starting_ruler": "Nasiruddin Mahmud",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 6.5,
+      "eco_score": 9.0,
+      "dip_score": 6.0,
+      "key_idea": "Bengal Cloth Trade (+10% Goods Produced)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "trade"]
+  },
+  "GEN": {
+    "name": "Genoa",
+    "region": "Italy",
+    "macro_region": "Southern Europe",
+    "starting_ruler": "Raffaele Adorno",
+    "ruler_adm": 3,
+    "ruler_dip": 4,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 4.5,
+      "eco_score": 9.5,
+      "dip_score": 8.0,
+      "key_idea": "Liguria Shipping Network (+15% Trade Efficiency)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["tall", "trade", "naval"]
+  },
+  "SAV": {
+    "name": "Savoy",
+    "region": "Italy",
+    "macro_region": "Southern Europe",
+    "starting_ruler": "Ludovico I di Savoia",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.0,
+      "eco_score": 6.5,
+      "dip_score": 9.0,
+      "key_idea": "Alpine Passes (+1 Diplomatic Relations)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "diplomatic"]
+  },
+  "PAP": {
+    "name": "Papal States",
+    "region": "Italy",
+    "macro_region": "Southern Europe",
+    "starting_ruler": "Eugenius IV Condulmer",
+    "ruler_adm": 4,
+    "ruler_dip": 4,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.5,
+      "eco_score": 6.0,
+      "dip_score": 9.0,
+      "key_idea": "Holy See Authority (+1 Yearly Devotion)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "diplomatic"]
+  },
+  "BOH": {
+    "name": "Bohemia",
+    "region": "Germany",
+    "macro_region": "Central Europe",
+    "starting_ruler": "Ladislav Pohrobek",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 6.0,
+      "dip_score": 7.0,
+      "key_idea": "Hussite Legacy (+10% Infantry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "infantry", "quality"]
+  },
+  "BAV": {
+    "name": "Bavaria",
+    "region": "Germany",
+    "macro_region": "Central Europe",
+    "starting_ruler": "Albrecht III Wittelsbach",
+    "ruler_adm": 4,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.5,
+      "eco_score": 6.5,
+      "dip_score": 8.0,
+      "key_idea": "Beer Purity Law (+10% National Tax Modifier)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "trade"]
+  },
+  "SWI": {
+    "name": "Switzerland",
+    "region": "Germany",
+    "macro_region": "Central Europe",
+    "starting_ruler": "Federal Council",
+    "ruler_adm": 4,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 6.0,
+      "dip_score": 5.0,
+      "key_idea": "Swiss Mercenaries (+15% Infantry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "military", "infantry", "quality"]
+  },
+  "HOL": {
+    "name": "Holland",
+    "region": "Low Countries",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Filips I van Bourgogne",
+    "ruler_adm": 4,
+    "ruler_dip": 4,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 5.0,
+      "eco_score": 10.0,
+      "dip_score": 7.5,
+      "key_idea": "Polder Reclamation (+10% Goods Produced Modifier)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["tall", "trade", "colonial", "naval"]
+  },
+  "SCO": {
+    "name": "Scotland",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "James II Stewart",
+    "ruler_adm": 2,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 5.0,
+      "dip_score": 6.5,
+      "key_idea": "The Auld Alliance (+20% Land Morale)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "quality"]
+  },
+  "NAV": {
+    "name": "Navarra",
+    "region": "Western Europe",
+    "macro_region": "Western Europe",
+    "starting_ruler": "Blanca I de Trastámara",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 6.0,
+      "eco_score": 5.5,
+      "dip_score": 8.5,
+      "key_idea": "Pyrenean Diplomacy (+1 Diplomatic Relations)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["tall", "diplomatic"]
+  },
+  "NOR": {
+    "name": "Norway",
+    "region": "Scandinavia",
+    "macro_region": "Northern Europe",
+    "starting_ruler": "Christopher von Wittelsbach",
+    "ruler_adm": 3,
+    "ruler_dip": 2,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 6.5,
+      "eco_score": 8.0,
+      "dip_score": 6.0,
+      "key_idea": "Leif Erikson Legacy (+1 Colonists)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["tall", "colonial", "naval"]
+  },
+  "DAN": {
+    "name": "Denmark",
+    "region": "Scandinavia",
+    "macro_region": "Northern Europe",
+    "starting_ruler": "Christopher I von Wittelsbach",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 7.0,
+      "eco_score": 7.5,
+      "dip_score": 8.0,
+      "key_idea": "Vornedskab (-10% Stability Cost Modifier)"
+    },
+    "ambition": "beginner",
+    "playstyle_tags": ["wide", "diplomatic", "naval"]
+  },
+  "TEU": {
+    "name": "Teutonic Order",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Konrad von Erlichshausen",
+    "ruler_adm": 3,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 9.0,
+      "eco_score": 5.5,
+      "dip_score": 5.5,
+      "key_idea": "Prussian Crusade (+10% Cavalry Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "military", "cavalry", "quality"]
+  },
+  "LIV": {
+    "name": "Livonian Order",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Heidenreich Vincke",
+    "ruler_adm": 2,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 6.0,
+      "dip_score": 6.0,
+      "key_idea": "Baltic Fortresses (+10% Fort Defense)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "quality"]
+  },
+  "UKR": {
+    "name": "Lithuania",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Kazimieras Jogailaitis",
+    "ruler_adm": 4,
+    "ruler_dip": 3,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 5.0,
+      "dip_score": 6.5,
+      "key_idea": "Lithuanian Hussars (+20% Cavalry Combat Ability)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "cavalry", "quality"]
+  },
+  "NOV": {
+    "name": "Novgorod",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Euphemius II",
+    "ruler_adm": 4,
+    "ruler_dip": 4,
+    "ruler_mil": 2,
+    "national_ideas": {
+      "mil_score": 5.5,
+      "eco_score": 9.5,
+      "dip_score": 6.5,
+      "key_idea": "Veche Republic (+10% Trade Efficiency)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["tall", "trade"]
+  },
+  "RYA": {
+    "name": "Ryazan",
+    "region": "Eastern Europe",
+    "macro_region": "Eastern Europe",
+    "starting_ruler": "Ivan II Rurikovich",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 4.5,
+      "dip_score": 5.0,
+      "key_idea": "Steppe Border Guard (+10% Manpower Recovery Speed)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "quantity"]
+  },
+  "GEO": {
+    "name": "Georgia",
+    "region": "Caucasus",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Vakhtang IV Bagrationi",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.5,
+      "eco_score": 4.0,
+      "dip_score": 5.0,
+      "key_idea": "Caucasian Defiles (+20% Fort Defense)"
+    },
+    "ambition": "challenge",
+    "playstyle_tags": ["wide", "military", "quality"]
+  },
+  "TUN": {
+    "name": "Tunis",
+    "region": "Maghreb",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Uthman Hafsid",
+    "ruler_adm": 4,
+    "ruler_dip": 3,
+    "ruler_mil": 4,
+    "national_ideas": {
+      "mil_score": 7.0,
+      "eco_score": 8.0,
+      "dip_score": 6.5,
+      "key_idea": "Barbary Corsairs (+20% Galley Combat Ability)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "naval", "military", "quality"]
+  },
+  "MOR": {
+    "name": "Morocco",
+    "region": "Maghreb",
+    "macro_region": "Middle East & North Africa",
+    "starting_ruler": "Abd al-Haqq II Wattasid",
+    "ruler_adm": 2,
+    "ruler_dip": 2,
+    "ruler_mil": 3,
+    "national_ideas": {
+      "mil_score": 8.0,
+      "eco_score": 6.5,
+      "dip_score": 5.5,
+      "key_idea": "Trans-Saharan Caravans (+10% Trade Efficiency)"
+    },
+    "ambition": "intermediate",
+    "playstyle_tags": ["wide", "trade"]
+  }
+}

@@ -1,0 +1,14 @@
+# python
+.venv/
+__pycache__/
+*.pyc
+
+# claude project metadata (not part of the submission)
+.claude/
+
+# original high-res source paintings (kept locally; the app only serves the
+# resized/compressed copies committed under frontend/public/paintings)
+/paintings/
+
+# misc
+*.log
