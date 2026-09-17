@@ -38,6 +38,11 @@ class RecommendRequest(BaseModel):
     ambition: Ambition
 
 
+@app.get("/")
+def root():
+    return {"message": "EU4 Playstyle Recommender API", "docs": "/docs", "health": "/health"}
+
+
 @app.get("/health")
 def health():
     return {"status": "ok"}
