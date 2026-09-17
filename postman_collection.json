@@ -12,6 +12,32 @@
   ],
   "item": [
     {
+      "name": "GET /health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": { "raw": "{{base_url}}/health", "host": ["{{base_url}}"], "path": ["health"] }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "type": "text/javascript",
+            "exec": [
+              "pm.test('Status code is 200', function () {",
+              "    pm.response.to.have.status(200);",
+              "});",
+              "",
+              "pm.test('Health check reports ok', function () {",
+              "    const body = pm.response.json();",
+              "    pm.expect(body).to.have.property('status', 'ok');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
       "name": "GET /info",
       "request": {
         "method": "GET",

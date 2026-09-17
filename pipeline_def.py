@@ -26,26 +26,32 @@ class PlaystyleEncoder(BaseEstimator, TransformerMixin):
     """
 
     def __init__(self, tag_vocab=None, region_vocab=None, ambition_vocab=None):
-        self.tag_vocab = tag_vocab if tag_vocab is not None else TAG_VOCAB
-        self.region_vocab = region_vocab if region_vocab is not None else REGION_VOCAB
-        self.ambition_vocab = ambition_vocab if ambition_vocab is not None else AMBITION_VOCAB
+        self.tag_vocab = tag_vocab
+        self.region_vocab = region_vocab
+        self.ambition_vocab = ambition_vocab
 
     def fit(self, X, y=None):
         return self
 
     def transform(self, X):
+        tag_vocab = self.tag_vocab if self.tag_vocab is not None else TAG_VOCAB
+        region_vocab = self.region_vocab if self.region_vocab is not None else REGION_VOCAB
+        ambition_vocab = self.ambition_vocab if self.ambition_vocab is not None else AMBITION_VOCAB
         rows = []
         for record in X:
             tags = set(record["playstyle_tags"])
-            tag_vec = [1.0 if t in tags else 0.0 for t in self.tag_vocab]
-            region_vec = [1.0 if record["macro_region"] == r else 0.0 for r in self.region_vocab]
-            ambition_vec = [1.0 if record["ambition"] == a else 0.0 for a in self.ambition_vocab]
+            tag_vec = [1.0 if t in tags else 0.0 for t in tag_vocab]
+            region_vec = [1.0 if record["macro_region"] == r else 0.0 for r in region_vocab]
+            ambition_vec = [1.0 if record["ambition"] == a else 0.0 for a in ambition_vocab]
             rows.append(tag_vec + region_vec + ambition_vec)
         return np.array(rows, dtype=float)
 
     def get_feature_names_out(self, input_features=None):
+        tag_vocab = self.tag_vocab if self.tag_vocab is not None else TAG_VOCAB
+        region_vocab = self.region_vocab if self.region_vocab is not None else REGION_VOCAB
+        ambition_vocab = self.ambition_vocab if self.ambition_vocab is not None else AMBITION_VOCAB
         return np.array(
-            [f"tag:{t}" for t in self.tag_vocab]
-            + [f"region:{r}" for r in self.region_vocab]
-            + [f"ambition:{a}" for a in self.ambition_vocab]
+            [f"tag:{t}" for t in tag_vocab]
+            + [f"region:{r}" for r in region_vocab]
+            + [f"ambition:{a}" for a in ambition_vocab]
         )
