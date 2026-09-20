@@ -30,8 +30,8 @@ const AMBITION_COLOR: Record<string, string> = Object.fromEntries(
 );
 
 const EXPANSION_TAGS = [
-  { value: "tall", label: "Tall" },
-  { value: "wide", label: "Wide" },
+  { value: "tall", label: "Tall", hint: "Compact and deeply developed" },
+  { value: "wide", label: "Wide", hint: "Large and sprawling" },
 ];
 
 const FOCUS_TAGS = [
@@ -45,8 +45,8 @@ const FOCUS_TAGS = [
 const MILITARY_SUBTAGS = [
   { value: "infantry", label: "Infantry" },
   { value: "cavalry", label: "Cavalry" },
-  { value: "quality", label: "Quality" },
-  { value: "quantity", label: "Quantity" },
+  { value: "quality", label: "Quality", hint: "Fewer, stronger troops" },
+  { value: "quantity", label: "Quantity", hint: "More troops, less polish" },
 ];
 
 const INPUT_STEPS = ["region", "ambition", "expansion", "focus"] as const;
@@ -109,6 +109,45 @@ function Chip({
     >
       {children}
     </button>
+  );
+}
+
+function HintChip({
+  active,
+  onClick,
+  label,
+  hint,
+}: {
+  active: boolean;
+  onClick: () => void;
+  label: string;
+  hint: string;
+}) {
+  const [showHint, setShowHint] = useState(false);
+  return (
+    <span className="relative inline-flex items-center">
+      <Chip active={active} onClick={onClick}>
+        {label}
+      </Chip>
+      <button
+        type="button"
+        onMouseEnter={() => setShowHint(true)}
+        onMouseLeave={() => setShowHint(false)}
+        onClick={(e) => {
+          e.stopPropagation();
+          setShowHint((v) => !v);
+        }}
+        aria-label={`What does ${label} mean?`}
+        className="ml-1 flex h-4 w-4 items-center justify-center rounded-full border border-[rgba(240,220,180,0.3)] text-[9px] text-[#c9a568] hover:bg-white/10"
+      >
+        i
+      </button>
+      {showHint && (
+        <span className="absolute left-1/2 top-full z-30 mt-1 w-max max-w-[160px] -translate-x-1/2 rounded-md border border-[rgba(240,220,180,0.18)] bg-[rgba(20,17,13,0.95)] px-2 py-1 text-[11px] leading-snug text-[#e8dcc4] shadow-lg">
+          {hint}
+        </span>
+      )}
+    </span>
   );
 }
 
@@ -298,11 +337,21 @@ export function PickerWizard() {
                 Tall, or wide?
               </h2>
               <div className="flex flex-wrap justify-center gap-2">
-                {EXPANSION_TAGS.map((t) => (
-                  <Chip key={t.value} active={tags.has(t.value)} onClick={() => toggleTag(t.value)}>
-                    {t.label}
-                  </Chip>
-                ))}
+                {EXPANSION_TAGS.map((t) =>
+                  t.hint ? (
+                    <HintChip
+                      key={t.value}
+                      active={tags.has(t.value)}
+                      onClick={() => toggleTag(t.value)}
+                      label={t.label}
+                      hint={t.hint}
+                    />
+                  ) : (
+                    <Chip key={t.value} active={tags.has(t.value)} onClick={() => toggleTag(t.value)}>
+                      {t.label}
+                    </Chip>
+                  )
+                )}
               </div>
             </div>
           )}
@@ -321,11 +370,21 @@ export function PickerWizard() {
               </div>
               {tags.has("military") && (
                 <div className="flex flex-wrap justify-center gap-2 border-t border-[rgba(240,220,180,0.14)] pt-3">
-                  {MILITARY_SUBTAGS.map((t) => (
-                    <Chip key={t.value} active={tags.has(t.value)} onClick={() => toggleTag(t.value)}>
-                      {t.label}
-                    </Chip>
-                  ))}
+                  {MILITARY_SUBTAGS.map((t) =>
+                    t.hint ? (
+                      <HintChip
+                        key={t.value}
+                        active={tags.has(t.value)}
+                        onClick={() => toggleTag(t.value)}
+                        label={t.label}
+                        hint={t.hint}
+                      />
+                    ) : (
+                      <Chip key={t.value} active={tags.has(t.value)} onClick={() => toggleTag(t.value)}>
+                        {t.label}
+                      </Chip>
+                    )
+                  )}
                 </div>
               )}
             </div>
