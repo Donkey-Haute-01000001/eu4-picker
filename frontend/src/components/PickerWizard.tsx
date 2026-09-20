@@ -167,11 +167,37 @@ function ProgressDots({ count, active }: { count: number; active: number }) {
   );
 }
 
-function StatTile({ label, value }: { label: string; value: string | number }) {
+function StatTile({
+  label,
+  value,
+  hint,
+}: {
+  label: string;
+  value: string | number;
+  hint?: string;
+}) {
+  const [showHint, setShowHint] = useState(false);
   return (
-    <div className="rounded-md border border-[rgba(240,220,180,0.14)] bg-white/5 p-1.5 text-center">
+    <div className="relative rounded-md border border-[rgba(240,220,180,0.14)] bg-white/5 p-1.5 text-center">
+      {hint && (
+        <button
+          type="button"
+          onMouseEnter={() => setShowHint(true)}
+          onMouseLeave={() => setShowHint(false)}
+          onClick={() => setShowHint((v) => !v)}
+          aria-label={`What does ${label} mean?`}
+          className="absolute right-1 top-1 flex h-3.5 w-3.5 items-center justify-center rounded-full border border-[rgba(240,220,180,0.3)] text-[8px] leading-none text-[#c9a568] hover:bg-white/10"
+        >
+          i
+        </button>
+      )}
       <div className={`text-[9px] uppercase tracking-wide ${TEXT_MUTED}`}>{label}</div>
       <div className={`text-base font-semibold ${TEXT_WARM}`}>{value}</div>
+      {hint && showHint && (
+        <span className="absolute left-1/2 top-full z-30 mt-1 w-max max-w-[140px] -translate-x-1/2 rounded-md border border-[rgba(240,220,180,0.18)] bg-[rgba(20,17,13,0.95)] px-2 py-1 text-[11px] leading-snug text-[#e8dcc4] shadow-lg">
+          {hint}
+        </span>
+      )}
     </div>
   );
 }
@@ -433,18 +459,42 @@ export function PickerWizard() {
               </div>
 
               <div className="grid grid-cols-3 gap-1.5">
-                <StatTile label="ADM" value={details[resultIndex].ruler_adm} />
-                <StatTile label="DIP" value={details[resultIndex].ruler_dip} />
-                <StatTile label="MIL" value={details[resultIndex].ruler_mil} />
+                <StatTile
+                  label="ADM"
+                  value={details[resultIndex].ruler_adm}
+                  hint="Ruler's starting admin skill (0–6)"
+                />
+                <StatTile
+                  label="DIP"
+                  value={details[resultIndex].ruler_dip}
+                  hint="Ruler's starting diplomacy skill (0–6)"
+                />
+                <StatTile
+                  label="MIL"
+                  value={details[resultIndex].ruler_mil}
+                  hint="Ruler's starting military skill (0–6)"
+                />
               </div>
               <p className={`text-center text-xs ${TEXT_MUTED}`}>
                 Starting ruler: {details[resultIndex].starting_ruler}
               </p>
 
               <div className="grid grid-cols-3 gap-1.5">
-                <StatTile label="Economy" value={details[resultIndex].national_ideas.eco_score} />
-                <StatTile label="Diplomacy" value={details[resultIndex].national_ideas.dip_score} />
-                <StatTile label="Military" value={details[resultIndex].national_ideas.mil_score} />
+                <StatTile
+                  label="Economy"
+                  value={details[resultIndex].national_ideas.eco_score}
+                  hint="National idea strength: economy (0–10)"
+                />
+                <StatTile
+                  label="Diplomacy"
+                  value={details[resultIndex].national_ideas.dip_score}
+                  hint="National idea strength: diplomacy (0–10)"
+                />
+                <StatTile
+                  label="Military"
+                  value={details[resultIndex].national_ideas.mil_score}
+                  hint="National idea strength: military (0–10)"
+                />
               </div>
               <p className={`text-center text-xs ${TEXT_WARM}`}>
                 {details[resultIndex].national_ideas.key_idea}
